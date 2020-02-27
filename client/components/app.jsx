@@ -38,10 +38,10 @@ class App extends React.Component {
       pushGrade.push(gradeCumulative);
     }
 
-    for (var j = 0; j <= 2; j++) {
+    for (var j = 0; j <= pushGrade.length - 1; j++) {
       sumGrade = sumGrade + pushGrade[j];
     }
-    const avgGrade = sumGrade / pushGrade.length;
+    var avgGrade = sumGrade / pushGrade.length;
 
     return avgGrade;
   }
