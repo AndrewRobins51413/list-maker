@@ -42,8 +42,31 @@ class App extends React.Component {
       sumGrade = sumGrade + pushGrade[j];
     }
     var avgGrade = sumGrade / pushGrade.length;
-
+    console.log('this.state.grades', this.state.grades);
     return avgGrade;
+  }
+
+  addAGrade(newGrade) {
+    const newGradeToSend = JSON.stringify(newGrade);
+    const config = {
+      method: 'POST',
+      body: newGradeToSend,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch('/api/grades')
+      .then(response => {
+        return response.json();
+      })
+      .then(newGradeData => {
+        const currentNewGrade = [...this.state.grades];
+        currentNewGrade.push(todoData);
+        this.setState({ grades: currentNewGrade });
+      })
+      .catch(err => {
+        return `There was an error: ${err}`;
+      });
   }
 
   render() {
