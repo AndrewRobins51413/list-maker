@@ -13,7 +13,7 @@ class App extends React.Component {
     this.getAllGrades(); // following model from fetch-practice
   }
 
-  handleChange() {
+  handleChange() { // this is probably surplus/leftovers
 
   }
 
@@ -86,37 +86,7 @@ class App extends React.Component {
         </tr>
       );
     });
-    return (
-      < div id="root" >
-        <div className="container">
-          <div className="row justify-content-between">
-            <h2>Student Grade Book <span className="badge "></span></h2>
-            <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
-          </div>
-        </div>
-        <div className="container">
-          <table className="table table-striped col-8">
 
-            <thead className="thead-light">
-
-              <tr>
-                <th className="col-4">Name</th>
-                <th className="col-2">grade</th>
-                <th className="col-2">course</th>
-              </tr>
-            </thead>
-            {gradeMap}
-          </table>
-          <div className="col-4">
-            <form onSubmit={this.handleSubmit} className="form-inline">
-              <div className="form-group mb-2">
-                <label>Student Info</label>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div >
-    );
   }
 }
 
