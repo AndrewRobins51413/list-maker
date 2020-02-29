@@ -1,9 +1,11 @@
 import React from 'react';
+import Student from './addagrade';
+import GradeTable from './grade-table';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { // the grades object assign an array of empty is equal to the state method on 'this' object
+    this.state = {
       grades: []
     };
   }
@@ -14,9 +16,9 @@ class App extends React.Component {
 
   getAllGrades() {
     fetch('/api/grades')
-      .then(response =>
-        response.json()
-      )
+      .then(response => {
+        return response.json();
+      })
       .then(gradeJson => {
         this.setState({ grades: gradeJson });
       })
@@ -38,18 +40,39 @@ class App extends React.Component {
       pushGrade.push(gradeCumulative);
     }
 
-    for (var j = 0; j <= 2; j++) {
+    for (var j = 0; j <= pushGrade.length - 1; j++) {
       sumGrade = sumGrade + pushGrade[j];
     }
-    const avgGrade = sumGrade / pushGrade.length;
-
+    var avgGrade = sumGrade / pushGrade.length;
     return avgGrade;
+  }
+
+  addAGrade(newGrade) {
+    const config = {
+      method: 'POST',
+      body: JSON.stringify(newGrade),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch('/api/grades', config)
+      .then(response => {
+        return response.json();
+      })
+
+      .then(newGradeData => { // Inspiration fro Sebastian's code
+        this.setState(state => ({
+          grades: state.grades.concat(newGradeData)
+        }));
+      })
+      .catch(err => {
+        return `There was an error: ${err}`;
+      });
   }
 
   render() {
     const gradeVariable = this.getAverageGrade();
     const gradeMap = this.state.grades.map(grade => {
-
       return (
         <tr key={grade.id}>
           <td> {grade.name} </td>
@@ -59,25 +82,20 @@ class App extends React.Component {
       );
     });
     return (
-      < div id="root" >
-        <div className="container">
-          <div className="row justify-content-between">
-            <h2>Student Grade Book <span className="badge "></span></h2>
-            <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
+      <div className="container">
+        <div className="row justify-content-between">
+          <h2>Student Grade Book <span className="badge "></span></h2>
+          <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
+        </div>
+        <div className="row">
+          <div className="col-8">
+            <GradeTable grades={gradeMap}/>
           </div>
         </div>
-
-        <table className="table table-striped">
-          <thead className="thead-light">
-            <tr>
-              <th>Name</th>
-              <th>grade</th>
-              <th>course</th>
-            </tr>
-          </thead>
-          {gradeMap}
-        </table>
-      </div >
+        <div className="col4">
+          <Student newStudent ={this.props.state}/>
+        </div>
+      </div>
     );
   }
 }
