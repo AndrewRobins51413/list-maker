@@ -48,10 +48,9 @@ class App extends React.Component {
   }
 
   addAGrade(newGrade) {
-    const newGradeToSend = JSON.stringify(newGrade);
     const config = {
       method: 'POST',
-      body: newGradeToSend,
+      body: JSON.stringify(newGrade),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -60,10 +59,11 @@ class App extends React.Component {
       .then(response => {
         return response.json();
       })
-      .then(newGradeData => {
-        const currentNewGrade = [...this.state.grades];
-        currentNewGrade.push(newGradeData);
-        this.setState({ grades: currentNewGrade });
+
+      .then(newGradeData => { // Inspiration fro Sebastian's code
+        this.setState(state => ({
+          grades: state.grades.concat(newGradeData)
+        }));
       })
       .catch(err => {
         return `There was an error: ${err}`;
@@ -90,8 +90,10 @@ class App extends React.Component {
         <div className="row">
           <div className="col-8">
             <GradeTable grades={gradeMap}/>
-            <Student></Student>
           </div>
+        </div>
+        <div className="col4">
+          <Student newStudent ={this.props.state}/>
         </div>
       </div>
     );
