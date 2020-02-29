@@ -1,10 +1,11 @@
 import React from 'react';
+import Student from './addagrade';
+import GradeTable from './grade-table';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = { // the grades object assign an array of empty is equal to the state method on 'this' object
+    this.state = {
       grades: []
     };
   }
@@ -13,15 +14,11 @@ class App extends React.Component {
     this.getAllGrades(); // following model from fetch-practice
   }
 
-  handleChange() { // this is probably surplus/leftovers
-
-  }
-
   getAllGrades() {
     fetch('/api/grades')
-      .then(response =>
-        response.json()
-      )
+      .then(response => {
+        return response.json();
+      })
       .then(gradeJson => {
         this.setState({ grades: gradeJson });
       })
@@ -47,7 +44,6 @@ class App extends React.Component {
       sumGrade = sumGrade + pushGrade[j];
     }
     var avgGrade = sumGrade / pushGrade.length;
-    console.log('this.state.grades', this.state.grades);
     return avgGrade;
   }
 
@@ -60,13 +56,13 @@ class App extends React.Component {
         'Content-Type': 'application/json'
       }
     };
-    fetch('/api/grades')
+    fetch('/api/grades', config)
       .then(response => {
         return response.json();
       })
       .then(newGradeData => {
         const currentNewGrade = [...this.state.grades];
-        currentNewGrade.push(todoData);
+        currentNewGrade.push(newGradeData);
         this.setState({ grades: currentNewGrade });
       })
       .catch(err => {
@@ -77,7 +73,6 @@ class App extends React.Component {
   render() {
     const gradeVariable = this.getAverageGrade();
     const gradeMap = this.state.grades.map(grade => {
-
       return (
         <tr key={grade.id}>
           <td> {grade.name} </td>
@@ -86,7 +81,20 @@ class App extends React.Component {
         </tr>
       );
     });
-
+    return (
+      <div className="container">
+        <div className="row justify-content-between">
+          <h2>Student Grade Book <span className="badge "></span></h2>
+          <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
+        </div>
+        <div className="row">
+          <div className="col-8">
+            <GradeTable grades={gradeMap}/>
+            <Student></Student>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

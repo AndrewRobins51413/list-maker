@@ -1,12 +1,12 @@
 import React from 'react';
 
-class AddAStudent extends React.Component {
+export default class Student extends React.Component {
   constructor(props) {
     super(props);
-    this.state {
+    this.state = {
       name: " ",
-        course: " ",
-          grade: " "
+      course: " ",
+      grade: " "
     }
     this.handleAddName = this.handleAddName.bind(this);
     this.handleAddCourse = this.handleAddCourse.bind(this);
@@ -20,58 +20,38 @@ class AddAStudent extends React.Component {
       name: event.target.value
     });
   }
-
-
   handleAddCourse(event) {
     this.setState({
       course: event.target.value
     });
   }
-
-
   handleAddGrade(event) {
     this.setState({
       grade: event.target.value
     });
   }
-
   handleAddId(event) {
     this.setState({
       id: event.target.value
     });
   }
-
+  // handleAdd(event) {
+  //   this.setState({
+  //     this.props.fetchNewGrade(this.state)
+  //   this.handleCancel
+  //   })
+  // }
   handleCancel(event) {
     this.setState({
       cancel: event.target.value
     });
-  }
+  // }
 
   render() {
     return (
-      < div id="root" >
-        <div className="container">
-          <div className="row justify-content-between">
-            <h2>Student Grade Book <span className="badge "></span></h2>
-            <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
-          </div>
-        </div>
-        <div className="container">
-          <div className="row">
-            <table className="table table-striped col-8">
-              <thead className="thead-light">
-                <tr>
-                  <th className="col-4">Name</th>
-                  <th className="col-2">grade</th>
-                  <th className="col-2">course</th>
-                </tr>
-              </thead>
-              <tbody>{gradeMap}</tbody>
-            </table>
-
             <div className="col-3">
-              <form>
-                <div className="form-row">Add New Student Here
+              <form onSubmit={this.handleAdd} onReset={this.handleCancel}>
+                <div className="form-row">Add Here
                   <div className="form-group col-md-8">
                     <label htmlFor="inputName"></label>
                     <input type="text" className="form-control" placeholder="Name" id="inputName"></input>
@@ -89,14 +69,10 @@ class AddAStudent extends React.Component {
                     <input type="text" className="form-control" placeholder="Grade" id="inputGrade"></input>
                   </div>
                 </div>
-                <button type="submit" onClick={} className="btn btn-primary mb-2">Submit</button>
+                <button type="submit" onClick={this.handleAddGrade(click)} className="btn btn-primary mb-2">Submit</button>
+                <button type="reset" onClick={this.handleCancel} className="btn btn-primary mb-2">Reset</button>
               </form>
             </div>
-          </div>
-        </div>
-      </div >
     );
   }
 }
-
-export default AddAStudent;
