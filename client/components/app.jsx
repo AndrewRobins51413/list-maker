@@ -8,6 +8,7 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    this.addAGrade = this.addAGrade.bind(this);
   }
 
   componentDidMount() {
@@ -60,7 +61,7 @@ class App extends React.Component {
         return response.json();
       })
 
-      .then(newGradeData => { // Inspiration fro Sebastian's code
+      .then(newGradeData => { // Inspiration from Sebastian's code
         this.setState(state => ({
           grades: state.grades.concat(newGradeData)
         }));
@@ -84,16 +85,16 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row justify-content-between">
-          <h2>Student Grade Book <span className="badge "></span></h2>
+          <h2>Student Grade Book <span className="badge col-6 "></span></h2>
           <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
         </div>
         <div className="row">
           <div className="col-8">
-            <GradeTable grades={gradeMap}/>
+            <GradeTable grades={gradeMap} />
           </div>
-        </div>
-        <div className="col4">
-          <Student newStudent ={this.props.state}/>
+          <div className="col-4">
+            <Student newStudent={this.state.grades} />
+          </div>
         </div>
       </div>
     );
