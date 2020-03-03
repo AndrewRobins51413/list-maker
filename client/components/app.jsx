@@ -9,6 +9,7 @@ class App extends React.Component {
       grades: []
     };
     this.addAGrade = this.addAGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   componentDidMount() {
@@ -71,6 +72,18 @@ class App extends React.Component {
       });
   }
 
+  deleteGrade(idToDelete, objectToDelete) {
+    fetch(`/api/grades/${idToDelete}`, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        this.setState(previousState => {
+          const newObjects = previousState.grades.filter(grade => grade.id !== objectToDelete.id);
+          return { grades: newObjects };
+        });
+      });
+  }
+
   render() {
     const gradeVariable = this.getAverageGrade();
     const gradeMap = this.state.grades.map(grade => {
@@ -93,7 +106,8 @@ class App extends React.Component {
             <GradeTable grades={gradeMap} />
           </div>
           <div className="col-4">
-            <Student newStudent={this.state.grades} />
+            <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
+            {/* line above add            de to the Student class. */}
           </div>
         </div>
       </div>
