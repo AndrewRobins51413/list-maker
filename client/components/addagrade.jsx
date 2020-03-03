@@ -9,9 +9,6 @@ export default class Student extends React.Component {
       grade: ' '
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.handleAddCourse = this.handleAddCourse.bind(this);
-    // this.handleAddGrade = this.handleAddGrade.bind(this);
-    // this.handleAddId = this.handleAddId.bind(this);
     // this.handleCancel = this.handleCancel.bind(this);
   }
 
@@ -20,16 +17,16 @@ export default class Student extends React.Component {
     );
   }
 
-  // handleCancel(event) {
-  //   this.setState({
-  //     cancel: event.target.value
-  //   });
-  // }
+  handleCancel(event) {
+    this.setState({
+      cancel: event.target.value
+    });
+  }
 
   render() {
     return (
       <div className="col-8">
-        <form onSubmit={this.addAGrade} onReset={this.handleCancel}>
+        <form onSubmit={this.addAGrade} onCancel={this.handleCancel}>
           <div className="form-row">
             <div className="form-group col-md-8">
               <label htmlFor="inputName"></label>
@@ -52,7 +49,7 @@ export default class Student extends React.Component {
             </div>
           </div>
           <button type="submit" onClick={this.handleChange} className="btn btn-primary mb-2">Submit</button>
-          <button type="reset" onClick={this.handleCancel} className="btn btn-primary mb-2">Reset</button>
+          <button type="cancel" onClick={this.handleCancel} className="btn btn-primary mb-2">Reset</button>
           {/* <tbody>{this.props.state}</tbody> */}
         </form>
       </div>
