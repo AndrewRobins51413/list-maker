@@ -72,13 +72,13 @@ class App extends React.Component {
       });
   }
 
-  deleteGrade(idToDelete, objectToDelete) {
+  deleteGrade(idToDelete) {
     fetch(`/api/grades/${idToDelete}`, {
       method: 'DELETE'
     })
       .then(() => {
         this.setState(previousState => {
-          const newObjects = previousState.grades.filter(grade => grade.id !== objectToDelete.id);
+          const newObjects = previousState.grades.filter(grade => grade.id !== idToDelete);
           return { grades: newObjects };
         });
       });
@@ -92,6 +92,9 @@ class App extends React.Component {
           <td> {grade.name} </td>
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
+          <td><button type='delete'
+            onClick={() => this.deleteGrade(grade.id)}>Delete
+          </button></td>
         </tr>
       );
     });
@@ -103,7 +106,7 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-8">
-            <GradeTable grades={gradeMap} />
+            <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
           </div>
           <div className="col-4">
             <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
