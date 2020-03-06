@@ -39,14 +39,16 @@ class App extends React.Component {
 
     for (var i = 0; i <= this.state.grades.length - 1; i++) {
       gradeCumulative = this.state.grades[i].grade;
-      pushGrade.push(gradeCumulative);
+      var gradeCumulative2 = parseFloat(gradeCumulative);
+      pushGrade.push(gradeCumulative2);
     }
 
     for (var j = 0; j <= pushGrade.length - 1; j++) {
       sumGrade = sumGrade + pushGrade[j];
     }
     var avgGrade = sumGrade / pushGrade.length;
-    return avgGrade;
+    var fixedGrade = avgGrade.toFixed(2);
+    return fixedGrade;
   }
 
   addAGrade(newGrade) {

@@ -25,16 +25,16 @@
       "grade": 80
     },
     {
-      "name": " Jim",
-      "course": " 90",
-      "grade": " Java",
-      "id": 5
+      "name": " Dave",
+      "course": "gym",
+      "grade": "88",
+      "id": 6
     },
     {
-      "name": " Jim",
-      "course": " java",
-      "grade": " 90",
-      "id": 6
+      "name": " Tim",
+      "course": "math",
+      "grade": "100",
+      "id": 7
     }
   ]
 }
