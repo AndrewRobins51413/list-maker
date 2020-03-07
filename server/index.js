@@ -12,7 +12,7 @@ server.use('/api', endpoints);
 server.post('/api/grades', (req, res, next) => {
 });
 
-server.listen(3001, () => {
+server.listen(3002, () => {
   // eslint-disable-next-line no-console
-  console.log('JSON Server listening on port 3001\n');
+  console.log('JSON Server listening on port 3002\n');
 });
