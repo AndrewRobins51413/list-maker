@@ -67,8 +67,9 @@ export default class Student extends React.Component {
                 className="form-control" placeholder="Grade" id="inputGrade"></input>
             </div>
           </div>
-          <button type="submit" onClick={this.handleOnClick} className="btn btn-primary mb-2 ">Submit</button>
-          <button type="cancel" onClick={this.handleCancel} className="btn btn-primary mb-2">Reset</button>
+          <button type="submit" onClick={this.handleOnClick} className="btn btn-primary btn-success mb-2 ">Submit</button>
+          <div></div>
+          <button type="cancel" onClick={this.handleCancel} className="btn btn-primary btn-danger mb-2">Reset</button>
 
         </form>
       </div>

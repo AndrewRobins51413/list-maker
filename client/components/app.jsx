@@ -94,7 +94,7 @@ class App extends React.Component {
           <td> {grade.name} </td>
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
-          <td><button type='delete'
+          <td><button type='delete' className='btn-warning'
             onClick={() => this.deleteGrade(grade.id)}>Delete
           </button></td>
         </tr>
