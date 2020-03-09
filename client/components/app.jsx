@@ -95,7 +95,7 @@ class App extends React.Component {
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
           <td><button type='delete' className='btn-warning'
-            onClick={() => this.deleteGrade(grade.id)}>Delete
+            onClick={() => this.deleteGrade(grade.id)}>Got It!
           </button></td>
         </tr>
       );
@@ -103,8 +103,8 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row justify-content-between">
-          <h2>Student Grade Book <span className="badge col-6 "></span></h2>
-          <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
+          <h2>Grocery List<span className="badge col-6 "></span></h2>
+          {/* <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3> */}
         </div>
         <div className="row">
           <div className="col-8">
