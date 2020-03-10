@@ -1,40 +1,34 @@
 {
   "grades": [
     {
-      "id": 1,
-      "name": "Kyle Simpson",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
       "name": " apples",
       "course": "green",
       "grade": "4",
       "id": 2
     },
     {
-      "name": " apples",
-      "course": "green",
-      "grade": "4",
-      "id": 3
-    },
-    {
-      "name": " apples",
-      "course": "green",
-      "grade": "4",
-      "id": 4
-    },
-    {
-      "name": " apples",
-      "course": "green",
-      "grade": "4",
-      "id": 11
-    },
-    {
       "name": " sausage",
       "course": " bratwurst",
       "grade": " 4",
       "id": 12
+    },
+    {
+      "name": " ham",
+      "course": " spiral cut",
+      "grade": " 3",
+      "id": 13
+    },
+    {
+      "name": " milk",
+      "course": " whole",
+      "grade": "1 gallon ",
+      "id": 14
+    },
+    {
+      "name": " salami",
+      "course": "hard",
+      "grade": " ,5 lb",
+      "id": 15
     }
   ]
 }
