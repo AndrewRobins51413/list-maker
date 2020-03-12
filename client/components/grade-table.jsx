@@ -7,7 +7,7 @@ export default class GradeTable extends React.Component {
         <thead className="thead-light ">
           <tr>
             <th>Item</th>
-            <th>Quantity</th>
+            <th>#</th>
             <th>Note</th>
             <th>Got It?</th>
           </tr>
