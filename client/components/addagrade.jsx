@@ -44,7 +44,7 @@ export default class Student extends React.Component {
 
   render() {
     return (
-      <div className="col-10">
+      <div className="col-10 smallscreenclass">
         <form onSubmit={this.addAGrade} onCancel={this.handleCancel}>
           <div className="form-row">
             <div className="form-group col-md-8">
