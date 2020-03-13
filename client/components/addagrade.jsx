@@ -44,25 +44,25 @@ export default class Student extends React.Component {
 
   render() {
     return (
-      <div className="col-10">
+      <div className="col-10 smallscreenclass">
         <form onSubmit={this.addAGrade} onCancel={this.handleCancel}>
           <div className="form-row">
             <div className="form-group col-md-8">
-              <label htmlFor="inputName">Name</label>
+              <label htmlFor="inputName">Grocery Item</label>
               <input onChange={this.handleChangeName} type="text" name="name" value={this.state.name}
                 className="form-control" placeholder="Name" id="inputName"></input>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-8">
-              <label htmlFor="inputCourse">Course</label>
+              <label htmlFor="inputCourse">Notes</label>
               <input onChange={this.handleAddCourse} type="text" name="course" value={this.state.course}
                 className="form-control" placeholder="Course" id="inputCourse"></input>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-8">
-              <label htmlFor="inputGrade">Grade</label>
+              <label htmlFor="inputGrade">How Many?</label>
               <input onChange={this.handleAddGrade} type="text" name="grade" value={this.state.grade}
                 className="form-control" placeholder="Grade" id="inputGrade"></input>
             </div>

@@ -87,7 +87,7 @@ class App extends React.Component {
   }
 
   render() {
-    const gradeVariable = this.getAverageGrade();
+    // const gradeVariable = this.getAverageGrade();
     const gradeMap = this.state.grades.map(grade => {
       return (
         <tr key={grade.id}>
@@ -95,16 +95,16 @@ class App extends React.Component {
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
           <td><button type='delete' className='btn-warning'
-            onClick={() => this.deleteGrade(grade.id)}>Delete
+            onClick={() => this.deleteGrade(grade.id)}>Got It!
           </button></td>
         </tr>
       );
     });
     return (
-      <div className="container">
-        <div className="row justify-content-between">
-          <h2>Student Grade Book <span className="badge col-6 "></span></h2>
-          <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3>
+      <div className="container border border-info">
+        <div className="row px-md-5 justify-content-between">
+          <h2>Grocery List<span className=" badge col-6 "></span></h2>
+          {/* <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3> */}
         </div>
         <div className="row">
           <div className="col-8">
