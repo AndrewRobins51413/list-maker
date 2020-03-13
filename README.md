@@ -2,13 +2,13 @@
 
 list-maker is an application that allows the user to add or delete items from a list.
 Technology used to build list-maker:
--React.js
--Webpack
--Bootstrap
--Node.js
--HTML
--CSS
--AWS
+- React.js
+- Webpack
+- Bootstrap
+- Node.js
+- HTML
+- CSS
+- AWS
 
 Live Demo https://list-maker/droneswarm.dev
 
