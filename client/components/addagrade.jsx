@@ -12,7 +12,6 @@ export default class Student extends React.Component {
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleAddGrade = this.handleAddGrade.bind(this);
     this.handleAddCourse = this.handleAddCourse.bind(this);
-    // this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleChangeName(event) {
@@ -32,11 +31,6 @@ export default class Student extends React.Component {
     );
   }
 
-  // handleCancel(event) {
-  //   this.setState({
-  //     cancel: event.target.value
-  //   });
-  // }
   handleOnClick(event) {
     event.preventDefault();
     this.props.addAGrade(this.state);
@@ -67,27 +61,13 @@ export default class Student extends React.Component {
                 className="form-control" placeholder="Grade" id="inputGrade"></input>
             </div>
           </div>
-          <button type="submit" onClick={this.handleOnClick} className="btn btn-primary btn-success mb-2 ">Submit</button>
-          <div></div>
-          <button type="cancel" onClick={this.handleCancel} className="btn btn-primary btn-danger mb-2">Reset</button>
-
+          <div className="row">
+            <button type="submit" onClick={this.handleOnClick} className="btn btn-primary btn-success  mb-2 ">Submit</button>
+            <div></div>
+            <button type="cancel" onClick={this.handleCancel} className="btn btn-primary btn-danger ml-1 mb-2">Reset</button>
+          </div>
         </form>
       </div>
     );
   }
 }
-
-// handleAddId(event) {
-//   this.setState({
-//     id: event.target.value  //onChange=handleChange({
-//       //this.setState
-//     })
-//   });
-// }
-
-// handleAdd(event) {
-//   this.setState({
-//     this.props.fetchNewGrade(this.state)
-//   this.handleCancel
-//   })
-// }
