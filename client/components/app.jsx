@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getAllGrades(); // following model from fetch-practice
+    this.getAllGrades();
   }
 
   getAllGrades() {
@@ -64,7 +64,7 @@ class App extends React.Component {
         return response.json();
       })
 
-      .then(newGradeData => { // Inspiration from Sebastian's code
+      .then(newGradeData => {
         this.setState(state => ({
           grades: state.grades.concat(newGradeData)
         }));
@@ -87,7 +87,6 @@ class App extends React.Component {
   }
 
   render() {
-    // const gradeVariable = this.getAverageGrade();
     const gradeMap = this.state.grades.map(grade => {
       return (
         <tr key={grade.id}>
@@ -104,7 +103,6 @@ class App extends React.Component {
       <div className="container border border-info">
         <div className="row px-md-5 justify-content-between">
           <h2>Grocery List<span className=" badge col-6 "></span></h2>
-          {/* <h3><span className=" badge badge-secondary ">Average = {gradeVariable}%</span></h3> */}
         </div>
         <div className="row">
           <div className="col-8">
@@ -112,7 +110,6 @@ class App extends React.Component {
           </div>
           <div className="col-4">
             <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
-            {/* line above add            de to the Student class. */}
           </div>
         </div>
       </div>
