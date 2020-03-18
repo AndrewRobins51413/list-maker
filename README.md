@@ -11,7 +11,7 @@ Technology used to build list-maker:
 - CSS
 - AWS
 
-Live Demo -- https://list-maker/droneswarm.dev/#
+[Live Demo](https://list-maker/droneswarm.dev)
 
 Features
 1. User can add item or task to list
