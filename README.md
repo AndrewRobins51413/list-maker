@@ -18,3 +18,5 @@ Features
 2. User can indicate number of items
 3. User can make notes about item or task
 4. User can delete items or tasks
+
+https://media.giphy.com/media/H4WPYDMNemCJvj9Igo/giphy.gif
