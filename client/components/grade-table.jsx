@@ -8,7 +8,7 @@ export default class GradeTable extends React.Component {
           <tr>
             <th>Item</th>
             <th>Quantity</th>
-            <th>Note</th>
+            <th>Notes</th>
             <th>Got It?</th>
           </tr>
         </thead>
