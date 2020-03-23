@@ -102,13 +102,13 @@ class App extends React.Component {
     return (
       <div className="container border border-info">
         <div className="row px-md-5 justify-content-between">
-          <h2>Grocery List<span className=" badge col-6 "></span></h2>
+          <h4>Grocery List<span className=" badge col-6 "></span></h4>
         </div>
         <div className="row">
           <div className="col-8">
             <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
           </div>
-          <div className="col-4">
+          <div className="col-6 col-sm-4">
             <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
           </div>
         </div>
