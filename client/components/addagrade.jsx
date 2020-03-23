@@ -38,7 +38,7 @@ export default class Student extends React.Component {
 
   render() {
     return (
-      <div className="col-12 col-md-10 ">
+      <div className="col-12 col-md-8 col-sm-8 ">
         <form onSubmit={this.addAGrade} onCancel={this.handleCancel}>
           <div className="form-row">
             <div className="form-group col-md-8">
