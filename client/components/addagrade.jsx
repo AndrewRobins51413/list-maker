@@ -12,6 +12,7 @@ export default class Student extends React.Component {
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleAddGrade = this.handleAddGrade.bind(this);
     this.handleAddCourse = this.handleAddCourse.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleChangeName(event) {
@@ -34,6 +35,15 @@ export default class Student extends React.Component {
   handleOnClick(event) {
     event.preventDefault();
     this.props.addAGrade(this.state);
+  }
+
+  handleCancel(event) {
+    event.preventDefault();
+    this.setState({
+      name: ' ',
+      course: ' ',
+      grade: ' '
+    });
   }
 
   render() {
