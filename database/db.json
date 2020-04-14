@@ -1,6 +1,7 @@
 {
   "grades": [
     {
+<<<<<<< HEAD
       "name": " sausage",
       "course": " bratwurst",
       "grade": " 4",
@@ -17,6 +18,24 @@
       "course": "Real Cheese Only",
       "grade": " All of it",
       "id": 15
+=======
+      "name": " milk",
+      "course": " green",
+      "grade": " 3",
+      "id": 5
+    },
+    {
+      "name": " crackers",
+      "course": " white",
+      "grade": " 3",
+      "id": 6
+    },
+    {
+      "name": " iphone6",
+      "course": " pink",
+      "grade": " 6",
+      "id": 10
+>>>>>>> 073442f5152fae0618b0e01475b055c2cb685754
     }
   ]
 }
