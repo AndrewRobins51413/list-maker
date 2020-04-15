@@ -100,15 +100,15 @@ class App extends React.Component {
       );
     });
     return (
-      <div className="container border border-info toptitle">
+      <div className="container-fluid border border-info toptitle">
         <div className="row px-5 justify-content-between">
           <h4>Grocery List</h4>
         </div>
-        <div className="row">
-          <div className=" col-8">
+        <div className="row px-5 d-flex">
+          <div className=" col-sm">
             <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
           </div>
-          <div className="col-6 col-sm-4">
+          <div className="col-sm">
             <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
           </div>
         </div>
