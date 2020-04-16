@@ -13,28 +13,10 @@
       "id": 13
     },
     {
-      "name": " Cheese",
-      "course": "Real Cheese Only",
-      "grade": " All of it",
-      "id": 15
-    }
-    {
-      "name": " milk",
-      "course": " green",
-      "grade": " 3",
-      "id": 5
-    },
-    {
-      "name": " crackers",
+      "name": " cheese balls",
       "course": " white",
-      "grade": " 3",
-      "id": 6
-    },
-    {
-      "name": " iphone6",
-      "course": " pink",
       "grade": " 6",
-      "id": 10
+      "id": 14
     }
   ]
 }
