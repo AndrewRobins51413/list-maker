@@ -104,7 +104,7 @@ class App extends React.Component {
         <div className="row px-5 justify-content-between">
           <h4>Grocery List</h4>
         </div>
-        <div className="row px-5 d-flex">
+        <div className="row d-flex">
           <div className=" col-sm">
             <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
           </div>
