@@ -1,6 +1,12 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import Student from './addagrade';
 import GradeTable from './grade-table';
+import ShopView from './shopview';
 
 class App extends React.Component {
   constructor(props) {
@@ -99,10 +105,14 @@ class App extends React.Component {
         </tr>
       );
     });
+    const titleStyle = {
+      color: 'darkgreen',
+      fontStyle: 'italic'
+    };
     return (
       <div className="container-fluid border border-info toptitle">
         <div className="row px-5 justify-content-between">
-          <h4>Grocery List</h4>
+          <h4 style={titleStyle}>Grocery List</h4>
         </div>
         <div className="row d-flex">
           <div className=" col-sm">

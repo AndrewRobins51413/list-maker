@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ShopView from './shopview';
 export default class Student extends React.Component {
   constructor(props) {
     super(props);
@@ -59,22 +59,24 @@ export default class Student extends React.Component {
           </div>
           <div className="form-row">
             <div className="form-group col-md-8">
-              <label htmlFor="inputCourse">Notes</label>
-              <input onChange={this.handleAddCourse} type="text" name="course" value={this.state.course}
-                className="form-control" placeholder="Course" id="inputCourse"></input>
+              <label htmlFor="inputGrade">How Many?</label>
+              <input onChange={this.handleAddGrade} type="text" name="grade" value={this.state.grade}
+                className="form-control" placeholder="Grade" id="inputGrade"></input>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-8">
-              <label htmlFor="inputGrade">How Many?</label>
-              <input onChange={this.handleAddGrade} type="text" name="grade" value={this.state.grade}
-                className="form-control" placeholder="Grade" id="inputGrade"></input>
+              <label htmlFor="inputCourse">Notes</label>
+              <input onChange={this.handleAddCourse} type="text" name="course" value={this.state.course}
+                className="form-control" placeholder="Course" id="inputCourse"></input>
             </div>
           </div>
           <div className="row">
             <button type="submit" onClick={this.handleOnClick} className="btn btn-primary btn-success  mb-2 ">Submit</button>
             <div></div>
             <button type="cancel" onClick={this.handleCancel} className="btn btn-primary btn-danger ml-1 mb-2">Reset</button>
+            <div></div>
+            <button type="button" onClick={this.handleCancel}} className="btn btn-info ml-1 mb-2">Shopping View</button>
           </div>
         </form>
       </div>
