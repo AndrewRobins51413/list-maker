@@ -1,9 +1,10 @@
 import React from 'react';
-import {Component, Fragment } from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 import Student from './addagrade';
 import GradeTable from './grade-table';
@@ -111,44 +112,44 @@ class App extends React.Component {
       fontStyle: 'italic'
     };
     return (
-    <div className="container-fluid border border-info toptitle">
-      <div className="row px-5 justify-content-between">
-        <h4 style={titleStyle}>Grocery List</h4>
-      </div>
-      <div className="row d-flex">
-        <div className=" col-sm">
-          <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
+      <>
+        <div className="container-fluid border border-info toptitle">
+          <div className="row px-5 justify-content-between">
+            <h4 style={titleStyle}>Grocery List</h4>
+          </div>
+          <div className="row d-flex">
+            <div className=" col-sm">
+              <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
+            </div>
+            <div className="col-sm">
+              <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
+            </div>
+          </div>
         </div>
-        <div className="col-sm">
-          <Student addAGrade={this.addAGrade} newStudent={this.state.grades} />
-        </div>
-      </div>
-    </div>
 
-      <Fragment>
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/shopview">ShopView</Link>
-              </li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route path="/shopview">
-              <ShopView />
-            </Route>
-            <Route path="/">
-              <App />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-      </Fragment>
+        <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/shopview">ShopView</Link>
+                </li>
+              </ul>
+            </nav>
+            <Switch>
+              <Route exact path="/shopview">
+                <ShopView />
+              </Route>
+              <Route exact path="/">
+                <App />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </>
     );
   }
 }
