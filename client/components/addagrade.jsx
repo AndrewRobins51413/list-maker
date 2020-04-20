@@ -76,7 +76,7 @@ export default class Student extends React.Component {
             <div></div>
             <button type="cancel" onClick={this.handleCancel} className="btn btn-primary btn-danger ml-1 mb-2">Reset</button>
             <div></div>
-            <button type="button" onClick={this.handleCancel}} className="btn btn-info ml-1 mb-2">Shopping View</button>
+            <button type="button" onClick={this.handleCancel} className="btn btn-info ml-1 mb-2">Shopping View</button>
           </div>
         </form>
       </div>

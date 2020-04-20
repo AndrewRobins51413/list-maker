@@ -13,7 +13,16 @@ class ShopView extends React.Component {
   render() {
 
     return (
-      console.log('hrllo')
+      console.log('hello')
+
+    <div>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Note</th>
+          <th>Got It?</th>
+        </tr>
+    </div>
     );
   }
 }
