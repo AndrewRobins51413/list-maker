@@ -9,7 +9,7 @@ import {
 import Student from './addagrade';
 import GradeTable from './grade-table';
 import ShopView from './shopview';
-
+import HomeView from './homeview';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -132,7 +132,7 @@ class App extends React.Component {
             <nav>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/homeview">Home</Link>
                 </li>
                 <li>
                   <Link to="/shopview">ShopView</Link>
@@ -143,8 +143,8 @@ class App extends React.Component {
               <Route exact path="/shopview">
                 <ShopView />
               </Route>
-              <Route exact path="/">
-                <App />
+              <Route exact path="/homeview">
+                <HomeView />
               </Route>
             </Switch>
           </div>
