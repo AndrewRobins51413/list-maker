@@ -11,7 +11,10 @@ class HomeView extends React.Component {
 
   render() {
     return (
-      <h2>HomeView</h2>
+      <div>
+        <h2>HomeView2</h2>
+        <button>Push</button>
+      </div>
     );
   }
 }

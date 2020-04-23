@@ -7,13 +7,13 @@ class ShopView extends React.Component {
     this.state = {
       view: ''
     };
-    this.shopView = this.shopView.bind(this);
+    // this.shopView = this.shopView.bind(this);
   }
 
   render() {
 
     return (
-      <h1> Shopview </h1>
+      <h1> Shopview3 </h1>
     );
   }
 }
