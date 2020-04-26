@@ -6,21 +6,19 @@ class ShopView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
-      time: '',
       grades: []
     };
-    this.shopView = this.shopView.bind(this);
+    // this.shopView = this.shopView.bind(this);
   }
 
-  shopView() {
-    var dateTime = new Date();
-    dateTime.setHours(dateTime.getHours(), dateTime.getMinutes() +1,0,0);
-    this.setState(
-      date : dateTime,
-      time:dateTime.toLocaleTimeString()
-    );
-  }
+  // shopView() {
+  //   var dateTime = new Date();
+  //   dateTime.setHours(dateTime.getHours(), dateTime.getMinutes() +1,0,0);
+  //   this.setState(
+  //     date : dateTime,
+  //     time:dateTime.toLocaleTimeString()
+  //   );
+  // }
 
   render() {
 
