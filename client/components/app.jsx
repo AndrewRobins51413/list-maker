@@ -135,6 +135,32 @@ class App extends React.Component {
                   <Link to="/homeview">Home1</Link>
                 </li>
                 <li>
+                  <Link to="/shopview">ShopView2</Link>
+                </li>
+              </ul>
+            </nav>
+            <Switch>
+              <Route exact path='/shopview'
+                render={props =>
+                  <ShopView
+                    {...props} />} />
+
+              <Route exact path='/homeview'
+                render={props =>
+                  <HomeView
+                    {...props} />} />
+
+            </Switch>
+          </div>
+        </Router>
+        {/* <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/homeview">Home</Link>
+                </li>
+                <li>
                   <Link to="/shopview">ShopView</Link>
                 </li>
               </ul>
@@ -152,7 +178,7 @@ class App extends React.Component {
 
             </Switch>
           </div>
-        </Router>
+        </Router> */}
       </>
     );
   }
