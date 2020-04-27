@@ -1,16 +1,28 @@
 {
   "grades": [
     {
-      "name": " sausage",
-      "course": " bratwurst",
-      "grade": " 4",
-      "id": 12
+      "id": 1,
+      "name": "Kyle Simpson",
+      "course": "JavaScript",
+      "grade": 100
     },
     {
-      "name": " ham",
-      "course": " spiral cut",
-      "grade": " 3",
-      "id": 13
+      "id": 2,
+      "name": "Brendan Eich",
+      "course": "JavaScript",
+      "grade": 100
+    },
+    {
+      "id": 4,
+      "name": "Crouglas Drockford",
+      "course": "Java",
+      "grade": 80
+    },
+    {
+      "name": " danny",
+      "course": " woodshop",
+      "grade": " 73",
+      "id": 5
     }
   ]
 }
