@@ -1,4 +1,5 @@
 import React from 'react';
+import DateTimePicker from 'react-datetime-picker';
 // import GradeTable from './grade-table';
 
 class ShopView extends React.Component {
@@ -17,6 +18,15 @@ class ShopView extends React.Component {
     type === 'checkbox' ? this.setState({ [name]: checked })
       : this.setState({ [name]: value });
   }
+
+  // shopView() {
+  //   var dateTime = new Date();
+  //   dateTime.setHours(dateTime.getHours(), dateTime.getMinutes() +1,0,0);
+  //   this.setState(
+  //     date : dateTime,
+  //     time:dateTime.toLocaleTimeString()
+  //   );
+  // }
 
   render() {
 

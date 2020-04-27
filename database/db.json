@@ -7,6 +7,7 @@
       "grade": 100
     },
     {
+<<<<<<< HEAD
       "id": 2,
       "name": "Brendan Eich",
       "course": "JavaScript",
@@ -23,6 +24,18 @@
       "course": " woodshop",
       "grade": " 73",
       "id": 5
+=======
+      "name": " ham",
+      "course": " spiral cut",
+      "grade": " 3",
+      "id": 13
+    },
+    {
+      "name": " eggs",
+      "course": " green",
+      "grade": " 3",
+      "id": 14
+>>>>>>> 4b378f84ba066413c95d8dd102a505fedac1ef22
     }
   ]
 }

@@ -166,12 +166,16 @@ class App extends React.Component {
               </ul>
             </nav>
             <Switch>
-              <Route exact path="/shopview">
-                <ShopView />
-              </Route>
-              <Route exact path="/homeview">
-                <HomeView />
-              </Route>
+              <Route exact path='/shopview'
+                render = {props =>
+                  <ShopView
+                    {...props} />} />
+
+              <Route exact path='/homeview'
+                render = {props =>
+                  <HomeView
+                    {...props} />} />
+
             </Switch>
           </div>
         </Router> */}
