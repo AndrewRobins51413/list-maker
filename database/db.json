@@ -1,30 +1,12 @@
 {
   "grades": [
     {
-      "id": 1,
-      "name": "Kyle Simpson",
-      "course": "JavaScript",
-      "grade": 100
+      "name": " sausage",
+      "course": " bratwurst",
+      "grade": " 4",
+      "id": 12
     },
     {
-<<<<<<< HEAD
-      "id": 2,
-      "name": "Brendan Eich",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "id": 4,
-      "name": "Crouglas Drockford",
-      "course": "Java",
-      "grade": 80
-    },
-    {
-      "name": " danny",
-      "course": " woodshop",
-      "grade": " 73",
-      "id": 5
-=======
       "name": " ham",
       "course": " spiral cut",
       "grade": " 3",
@@ -35,7 +17,12 @@
       "course": " green",
       "grade": " 3",
       "id": 14
->>>>>>> 4b378f84ba066413c95d8dd102a505fedac1ef22
+    },
+    {
+      "name": " hummus",
+      "course": " garlic",
+      "grade": " 3",
+      "id": 15
     }
   ]
 }

@@ -132,10 +132,10 @@ class App extends React.Component {
             <nav>
               <ul>
                 <li>
-                  <Link to="/homeview">Home1</Link>
+                  <Link to="/homeview">Home</Link>
                 </li>
                 <li>
-                  <Link to="/shopview">ShopView2</Link>
+                  <Link to="/shopview">ShopView</Link>
                 </li>
               </ul>
             </nav>
