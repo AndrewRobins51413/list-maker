@@ -81,9 +81,9 @@ class ShopView extends React.Component {
           <div>
             <hr />
             <div className="border border-info px-5 table table-success">
-              <h4 style={titleStyle}>You have entered:</h4>
+              <h4 style={titleStyle}>You have entered</h4>
               <p>Item Name: {this.state.grocery}</p>
-              <p>Acquisition status: {this.state.acquired ? 'Yes' : 'No'}</p>
+              <p>Acquisition status: {this.state.acquired ? 'Not Purchased' : 'Purchased'}</p>
               <p>Reason for non-acqisition: {this.state.reason}</p>
             </div>
           </div>
