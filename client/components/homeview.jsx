@@ -78,6 +78,10 @@ class HomeView extends React.Component {
   }
 
   render() {
+    const titleStyle = {
+      color: 'darkgreen',
+      fontStyle: 'italic'
+    };
     const gradeMap = this.state.grades.map(grade => {
       return (
         <tr key={grade.id}>
@@ -87,27 +91,26 @@ class HomeView extends React.Component {
           <td><button type='delete' className='btn-warning'
             onClick={() => this.deleteGrade(grade.id)}>Got It!
           </button></td>
-          <td><button type='button' className='btn btn-link'
+          <td><button type='button' className='btn btn-light'
             onClick={() => this.deleteGrade(grade.id)}>Nope!
           </button></td>
         </tr>
       );
     });
-    const titleStyle = {
-      color: 'darkgreen',
-      fontStyle: 'italic'
-    };
-    return (
-      <div>
-        <h4 style={titleStyle}>HomeView</h4>
-        <div>
-          <div className=" col-sm">
-            <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
-          </div>
-          <div className="row">
-            <Student />
-          </div>
 
+    return (
+      <div className = "row" >
+        <div>
+          <h4 style={titleStyle}>HomeView</h4>
+          <div>
+            <div className=" col-sm">
+              <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
+            </div>
+            <div className="row">
+              <Student addAGrade={this.addAGrade} newStudent={this.state.grades}/>
+            </div>
+
+          </div>
         </div>
       </div>
     );

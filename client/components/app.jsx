@@ -10,6 +10,8 @@ import Student from './addagrade';
 import GradeTable from './grade-table';
 import ShopView from './shopview';
 import HomeView from './homeview';
+import Header from './header';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -114,32 +116,9 @@ class App extends React.Component {
     };
     return (
       <>
-        <Router>
-          <div>
-            <nav>
-              <div className="row d-flex">
-                <ul>
-                  <Link to="/homeview"><h2 style={titleStyle}>HomeView</h2></Link>
-                </ul>
-                <ul>
-                  <Link to="/shopview"><h2 style={titleStyle}>ShopView</h2></Link>
-                </ul>
-              </div>
-            </nav>
-            <Switch>
-              <Route exact path='/shopview'
-                render={props =>
-                  <ShopView
-                    {...props} />} />
-
-              <Route exact path='/homeview'
-                render={props =>
-                  <HomeView
-                    {...props} />} />
-
-            </Switch>
-          </div>
-        </Router>
+        <div>
+          <Header />
+        </div>
         <div className="container-fluid border border-info toptitle">
           <div className="row px-5 justify-content-between">
             <h4 style={titleStyle}>Grocery List</h4>
@@ -153,33 +132,6 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-
-        {/* <Router>
-          <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/homeview">Home</Link>
-                </li>
-                <li>
-                  <Link to="/shopview">ShopView</Link>
-                </li>
-              </ul>
-            </nav>
-            <Switch>
-              <Route exact path='/shopview'
-                render = {props =>
-                  <ShopView
-                    {...props} />} />
-
-              <Route exact path='/homeview'
-                render = {props =>
-                  <HomeView
-                    {...props} />} />
-
-            </Switch>
-          </div>
-        </Router> */}
       </>
     );
   }
