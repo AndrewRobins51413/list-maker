@@ -20,14 +20,13 @@ class Header extends React.Component {
   render() {
     const titleStyle = {
       color: 'darkgreen',
-      fontStyle: 'italic',
-      backgroundColor: 'lightgrey'
+      fontStyle: 'italic'
     };
     return (
       <>
         <Router>
           <div>
-            <nav>
+            <nav className='navbar navbar-light bg-light'>
               <div className="row d-flex">
                 <ul>
                   <Link to="/homeview"><h2 style={titleStyle}>HomeView</h2></Link>
