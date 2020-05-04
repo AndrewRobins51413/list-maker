@@ -44,7 +44,7 @@ class HomeView extends React.Component {
 
   addAGrade(newGrade) {
     const config = {
-      method: postMessage,
+      method: 'POST',
       body: JSON.stringify(newGrade),
       headers: {
         'Content-Type': 'application/json'
@@ -88,18 +88,18 @@ class HomeView extends React.Component {
           <td> {grade.name} </td>
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
-          <td><button type='delete' className='btn-warning'
-            onClick={() => this.deleteGrade(grade.id)}>Got It!
+          <td><button type='delete' className='btn btn-warning'
+            onClick={() => this.deleteAGrade(grade.id)}>Got It!
           </button></td>
           <td><button type='button' className='btn btn-light'
-            onClick={() => this.deleteGrade(grade.id)}>Nope!
+            onClick={() => this.deleteAGrade(grade.id)}>Nope!
           </button></td>
         </tr>
       );
     });
 
     return (
-      <div className = "row" >
+      <div className= "row mx-4" >
         <div>
           <h4 style={titleStyle}>HomeView</h4>
           <div>
