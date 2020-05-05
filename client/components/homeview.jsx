@@ -19,6 +19,7 @@ class HomeView extends React.Component {
     };
     this.addAGrade = this.addAGrade.bind(this);
     this.deleteAGrade = this.deleteAGrade.bind(this);
+    this.itemNotFound = this.itemNotFound.bind(this);
   }
 
   componentDidMount() {
@@ -77,6 +78,30 @@ class HomeView extends React.Component {
       });
   }
 
+  itemNotFound(notFound) {
+    const config = {
+      method: 'POST',
+      body: JSON.stringify(notFound),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch('/api/grades', config)
+      .then(response => {
+        return response.json();
+      })
+
+      .then(notFoundData => {
+        this.setState(state => ({
+          grades: state.grades.concat(notFoundData)
+        }));
+      })
+      .catch(err => {
+        return `There was an error: ${err}`;
+      });
+    console.log(this.state);
+  }
+
   render() {
     const titleStyle = {
       color: 'darkgreen',
@@ -91,8 +116,8 @@ class HomeView extends React.Component {
           <td><button type='delete' className='btn btn-warning'
             onClick={() => this.deleteAGrade(grade.id)}>Got It!
           </button></td>
-          <td><button type='button' className='btn btn-light'
-            onClick={() => this.deleteAGrade(grade.id)}>Nope!
+          <td><button type='button' className='btn btn-light' data-toggle='modal' data-target='#notFoundModal'
+            onClick={() => this.itemNotFound(grade.id)}>Nope!
           </button></td>
         </tr>
       );
