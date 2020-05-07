@@ -34,7 +34,7 @@ class ShopView extends React.Component {
       fontStyle: 'italic'
     };
     return (
-      <div className='modal fade' id='notFoundModal' tabIndex='-1' role='dialog'>
+      <div className='modal-open modal fade' id='notFoundModal' tabIndex='-1' role='dialog'>
         <div className="modal-dialog px-5 border border-info" role="document">
           <div className='modal-content'>
             <div className='modal-header'> modal header
