@@ -124,17 +124,19 @@ class HomeView extends React.Component {
     });
 
     return (
-      <div className= "row mx-4" >
-        <div>
-          <h4 style={titleStyle}>HomeView</h4>
+      <div className=" m-3 border border-info">
+        <div className= "row mx-4 m-3" >
           <div>
-            <div className=" col-sm">
-              <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
-            </div>
-            <div className="row">
-              <Student addAGrade={this.addAGrade} newStudent={this.state.grades}/>
-            </div>
+            <h4 style={titleStyle}>HomeView</h4>
+            <div className= "border border-info">
+              <div className=" col-sm mt-3 ">
+                <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
+              </div>
+              <div className="row mx-3">
+                <Student addAGrade={this.addAGrade} newStudent={this.state.grades}/>
+              </div>
 
+            </div>
           </div>
         </div>
       </div>
