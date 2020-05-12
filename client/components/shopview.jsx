@@ -11,6 +11,7 @@ class ShopView extends React.Component {
       reason: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleReason = this.handleReason.bind(this);
   }
 
   handleChange(event) {
@@ -28,69 +29,81 @@ class ShopView extends React.Component {
   //   );
   // }
 
+  handleReason(event) {
+    event.preventDefault();
+    this.setState({ reason: event.target.value });
+  }
+
   render() {
+
     const titleStyle = {
       color: 'darkgreen',
       fontStyle: 'italic'
     };
+
+    const groceryList = this.state.grocery;
+    console.log('grocery', groceryList);
+
+    const reason = this.state.reason;
+    console.log('reason', reason);
+
     return (
-      <div className='modal fade' id='notFoundModal' tabIndex='-1' role='dialog'>
-        <div className="modal-dialog px-5 border border-info" role="document">
-          <div className='modal-content'>
-            <div className='modal-header'> modal header
-              <h4 className='modal-title' id='notFoundModal'>notFoundModal Found!</h4>
-              <form className="table table-success mt-4">
-                <h4 className="row px-5" style={titleStyle}> Shopview </h4>
-                <div className="row px-5">
-                  <label>
-                    <input
-                      className="ml-10"
-                      type="checkbox"
-                      name="acquired"
-                      // value = "doNotHave"
-                      onChange={this.handleChange}
-                      checked={this.state.acquired}
-                    /> Not acquired?
-                  </label>
+      <div className="border border-info">
+        <form className="table table-success mt-4">
+          <h4 className="row px-5" style={titleStyle}> NopeView </h4>
+          <div className="row px-5">
+            <label>
+              {/* <input
+                className="ml-10"
+                type="checkbox"
+                name="acquired"
+                // value = "doNotHave"
+                onChange={this.handleChange}
+                checked={this.state.acquired}
+              /> Not acquired? */}
+            </label>
 
-                  <input
-                    name="grocery"
-                    value={this.state.grocery}
-                    onChange={this.handleChange}
-                    placeholder="Grocery"
-                    className="ml-3"
-                  />
-                  <br />
-                </div>
+            <input
+              name="grocery"
+              value={this.state.grocery}
+              onChange={this.handleChange}
+              placeholder="Grocery"
+              className="ml-3"
+            />
+            <br />
+          </div>
+          <br />
+
+          <div className="form-row">
+            <div className="form-group col-md-8">
+              <div className=" px-5">
+                <select
+                  value={this.state.reason}
+                  name="reason"
+                  onChange={this.handleChange, this.handleReason}
+                  className="mb-4"
+                >
+                  <option value=""> Please choose a reason for non-acquisition</option>
+                  <option value="out of stock"> Out of Stock</option>
+                  <option value="over priced">Too Expensive</option>
+                  <option value="wrong size">Wrong Size</option>
+                </select>
+
                 <br />
-                <div className=" px-5">
-                  <select
-                    value={this.state.reason}
-                    name="reason"
-                    onChange={this.handleChange}
-                    className="mb-4"
-                  >
-                    <option value=""> Please choose a reason for non-acquisition</option>
-                    <option value="out of stock"> Out of Stock</option>
-                    <option value="over priced">Too Expensive</option>
-                    <option value="wrong size">Wrong Size</option>
-                  </select>
-
-                  <br />
-                  <button className="ml-5 mb-4">Submit</button>
-                </div>
-              </form>
-              <div>________________________________________________________________________</div>
-              <div>
-                <hr />
-                <div className="border border-info px-5 table table-success">
-                  <h4 style={titleStyle}>You have entered</h4>
-                  <p>Item Name: {this.state.grocery}</p>
-                  <p>Acquisition status: {this.state.acquired ? 'Not Purchased' : 'Purchased'}</p>
-                  <p>Reason for non-acqisition: {this.state.reason}</p>
-                </div>
+                <button className="ml-5 mb-4">Submit</button>
               </div>
             </div>
+          </div>
+
+        </form>
+
+        <div>
+          <hr />
+          <div className="border border-info px-5 table table-success">
+            <h4 style={titleStyle}>You have entered</h4>
+            <p>Item Name: {this.state.grocery}</p>
+            <p>Acquisition status: {this.state.acquired ? 'Not Purchased' : 'Purchased'}</p>
+            <p>Reason for non-acqisition: {this.state.reason}</p>
           </div>
         </div>
       </div>
