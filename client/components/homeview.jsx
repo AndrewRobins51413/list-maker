@@ -125,7 +125,7 @@ class HomeView extends React.Component {
 
     return (
       <div className=" m-3 border border-info">
-        <div className= "row mx-4 m-3" >
+        <div className= "row mx-2 m-3" >
           <div>
             <h4 style={titleStyle}>HomeView</h4>
             <div className= "border border-info">
