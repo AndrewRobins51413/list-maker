@@ -8,10 +8,12 @@ class ShopView extends React.Component {
     this.state = {
       grocery: '',
       acquired: false,
-      reason: ''
+      reason: '',
+      notes: 'testing'
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleReason = this.handleReason.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   handleChange(event) {
@@ -20,18 +22,36 @@ class ShopView extends React.Component {
       : this.setState({ [name]: value });
   }
 
-  // shopView() {
-  //   var dateTime = new Date();
-  //   dateTime.setHours(dateTime.getHours(), dateTime.getMinutes() +1,0,0);
-  //   this.setState(
-  //     date : dateTime,
-  //     time:dateTime.toLocaleTimeString()
-  //   );
-  // }
+  addANote(newNote) {
+    const configNote = {
+      method: 'POST',
+      body: JSON.stringify(newNote),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch('/api/notes', configNote)
+      .then(response => {
+        return response.json();
+      })
+      .then(newNoteData => {
+        this.setState(state => ({
+          notes: state.notes.concat(newNoteData)
+        }));
+      })
+      .catch(err => {
+        return `There was an error: ${err}`;
+      });
+  }
 
   handleReason(event) {
     event.preventDefault();
     this.setState({ reason: event.target.value });
+  }
+
+  handleOnClick(event) {
+    event.preventDefault();
+    this.addANote(this.state);
   }
 
   render() {
@@ -90,7 +110,7 @@ class ShopView extends React.Component {
                 </select>
 
                 <br />
-                <button className="ml-5 mb-4">Submit</button>
+                <button type="submit" onClick={this.handleOnClick} className="ml-5 mb-4">Submit</button>
               </div>
             </div>
           </div>
