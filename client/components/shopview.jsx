@@ -22,6 +22,10 @@ class ShopView extends React.Component {
       : this.setState({ [name]: value });
   }
 
+  // The addANote function below is called when the submit button is pressed.
+  // the function does not appear to do anything.
+  // How do I send the written comment to the database?
+
   addANote(newNote) {
     const configNote = {
       method: 'POST',
@@ -68,7 +72,7 @@ class ShopView extends React.Component {
     console.log('reason', reason);
 
     return (
-      <div className="border border-info">
+      <div className="m-3 border border-warning col-md-6">
         <form className="table table-success mt-4">
           <h4 className="row px-5" style={titleStyle}> NopeView </h4>
           <div className="row px-5">

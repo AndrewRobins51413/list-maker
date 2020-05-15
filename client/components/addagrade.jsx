@@ -48,7 +48,7 @@ export default class Student extends React.Component {
 
   render() {
     return (
-      <div className="col-12 col-md-8 col-sm-8 ">
+      <div className="col-8 col-md-8 col-sm-8 ">
         <form onSubmit={this.addAGrade} onCancel={this.handleCancel}>
           <div className="form-row">
             <div className="form-group col-md-8">
@@ -74,9 +74,7 @@ export default class Student extends React.Component {
           <div className="row">
             <button type="submit" onClick={this.handleOnClick} className="btn btn-primary btn-success  mb-2 ">Submit</button>
             <div></div>
-            <button type="cancel" onClick={this.handleCancel} className="btn btn-primary btn-danger ml-1 mb-2">Reset</button>
-            <div></div>
-            {/* <button type="button" onClick={this.handleCancel} className="btn btn-info ml-1 mb-2">NopeView</button> */}
+            <button type="reset" onClick={this.handleCancel} className="btn btn-primary btn-danger ml-1 mb-2">Reset</button>
           </div>
         </form>
       </div>

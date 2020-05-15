@@ -38,28 +38,29 @@ class App extends React.Component {
         return `There was an error: ${err}`;
       });
   }
+  // Below is the function for getting an avarge grade from when this was a
+  // gradebook app.
+  // getAverageGrade() {
+  //   var sumGrade = 0;
+  //   var pushGrade = [];
+  //   if (this.state.grades.length === 0) {
+  //     return 'not applicable';
+  //   }
+  //   var gradeCumulative = null;
 
-  getAverageGrade() {
-    var sumGrade = 0;
-    var pushGrade = [];
-    if (this.state.grades.length === 0) {
-      return 'not applicable';
-    }
-    var gradeCumulative = null;
+  //   for (var i = 0; i <= this.state.grades.length - 1; i++) {
+  //     gradeCumulative = this.state.grades[i].grade;
+  //     var gradeCumulative2 = parseFloat(gradeCumulative);
+  //     pushGrade.push(gradeCumulative2);
+  //   }
 
-    for (var i = 0; i <= this.state.grades.length - 1; i++) {
-      gradeCumulative = this.state.grades[i].grade;
-      var gradeCumulative2 = parseFloat(gradeCumulative);
-      pushGrade.push(gradeCumulative2);
-    }
-
-    for (var j = 0; j <= pushGrade.length - 1; j++) {
-      sumGrade = sumGrade + pushGrade[j];
-    }
-    var avgGrade = sumGrade / pushGrade.length;
-    var fixedGrade = avgGrade.toFixed(2);
-    return fixedGrade;
-  }
+  //   for (var j = 0; j <= pushGrade.length - 1; j++) {
+  //     sumGrade = sumGrade + pushGrade[j];
+  //   }
+  //   var avgGrade = sumGrade / pushGrade.length;
+  //   var fixedGrade = avgGrade.toFixed(2);
+  //   return fixedGrade;
+  // }
 
   addAGrade(newGrade) {
     const config = {
@@ -105,7 +106,7 @@ class App extends React.Component {
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
           <td><button type='delete' className='btn-warning'
-            onClick={() => this.deleteGrade(grade.id)}>Got It!
+            onClick={() => this.deleteGrade(grade.id)}>GotIt!
           </button></td>
         </tr>
       );
