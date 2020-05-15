@@ -107,6 +107,7 @@ class HomeView extends React.Component {
       color: 'darkgreen',
       fontStyle: 'italic'
     };
+
     const gradeMap = this.state.grades.map(grade => {
       return (
         <tr key={grade.id}>
@@ -114,7 +115,7 @@ class HomeView extends React.Component {
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
           <td><button type='delete' className='btn btn-warning'
-            onClick={() => this.deleteAGrade(grade.id)}>Got It!
+            onClick={() => this.deleteAGrade(grade.id)}>Yes!
           </button></td>
           <td><button type='button' className='btn btn-light' data-toggle='modal' data-target='#notFoundModal'
             onClick={() => this.itemNotFound(grade.id)}>Nope!
@@ -124,16 +125,16 @@ class HomeView extends React.Component {
     });
 
     return (
-      <div className=" m-3 border border-info">
-        <div className= "row mx-2 m-3" >
+      <div className=" container-fluid m-1 table table-responsive">
+        <div className= "row m-1 " >
           <div>
             <h4 style={titleStyle}>HomeView</h4>
-            <div className= "border border-info">
-              <div className=" col-sm mt-3 ">
-                <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} />
+            <div className= "border border-info table table-responsive">
+              <div className='mr-3'>
+                <GradeTable deleteGrade={this.deleteGrade} grades={gradeMap} className="border border-danger"/>
               </div>
               <div className="row mx-3">
-                <Student addAGrade={this.addAGrade} newStudent={this.state.grades}/>
+                <Student addAGrade={this.addAGrade} newStudent={this.state.grades} className="border border-danger"/>
               </div>
 
             </div>

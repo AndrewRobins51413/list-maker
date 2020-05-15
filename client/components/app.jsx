@@ -106,7 +106,7 @@ class App extends React.Component {
           <td>{grade.grade}</td>
           <td> {grade.course} </td>
           <td><button type='delete' className='btn-warning'
-            onClick={() => this.deleteGrade(grade.id)}>Got It!
+            onClick={() => this.deleteGrade(grade.id)}>GotIt!
           </button></td>
         </tr>
       );

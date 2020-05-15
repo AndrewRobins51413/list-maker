@@ -72,7 +72,7 @@ class ShopView extends React.Component {
     console.log('reason', reason);
 
     return (
-      <div className="border border-info">
+      <div className="m-3 border border-warning col-md-6">
         <form className="table table-success mt-4">
           <h4 className="row px-5" style={titleStyle}> NopeView </h4>
           <div className="row px-5">
